@@ -9,6 +9,7 @@ Returns:
 from math import *
 import typing
 
+
 def sum_list(input_list: typing.List[float]) -> float:
     """
     Write a type-annotated function sum_list which takes a list input_list
