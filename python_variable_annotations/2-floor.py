@@ -17,4 +17,4 @@ def floor(n: float) -> int:
     Returns:
         float: return float
     """
-    return floor(n)
+    return ceil(n)
