@@ -14,6 +14,7 @@ Returns:
 import asyncio
 import time
 
+
 def measure_time(n: int, max_delay: int) -> float:
     """
     From the previous file, import wait_n into 2-measure_runtime.py.
