@@ -1,13 +1,7 @@
 #!/usr/bin/env python3
 """
-Import wait_random from the previous python file that you’ve written and
-write an async routine called wait_n that takes in 2 int arguments
-(in this order): n and max_delay. You will spawn wait_random n times with
-the specified max_delay.
-
-wait_n should return the list of all the delays (float values). The list of
-the delays should be in ascending order without using sort() because of
-concurrency.
+Module that defines an async routine to run multiple task_wait_random
+calls concurrently and return their results in ascending order.
 
 Returns:
     _type_: list of float
@@ -18,44 +12,24 @@ import typing
 
 async def task_wait_n(n: int, max_delay: int) -> typing.List[float]:
     """
-    Import wait_random from the previous python file that you’ve written and
-    write an async routine called wait_n that takes in 2 int arguments
-    (in this order): n and max_delay. You will spawn wait_random n times with
-    the specified max_delay.
+    Run task_wait_random n times concurrently and return sorted results.
 
-    wait_n should return the list of all the delays (float values). The list of
-    the delays should be in ascending order without using sort() because of
-    concurrency.
+    This async function spawns n asyncio tasks using task_wait_random with
+    the given max_delay, runs them concurrently, and returns a sorted list
+    of the resulting delays.
 
     Args:
-        n (int): number of time
-        max_delay (int): nuùber
+        n (int): Number of tasks to spawn.
+        max_delay (int): Maximum delay for each task in seconds.
 
     Returns:
-        typing.List[float]: list of float
+        List[float]: Sorted list of delays returned by the tasks.
     """
-    wait_random = __import__('0-basic_async_syntax').wait_random
+    task_wait_random = __import__('3-tasks').task_wait_random
     list_float: list = []
 
     for i in range(n):
-        list_float.append(wait_random(max_delay))
+        list_float.append(task_wait_random(max_delay))
     result = await asyncio.gather(*list_float)
 
-    list_result: list = []
-
-    for i in result:
-        if not list_result:
-            list_result.append(i)
-            continue
-
-        inserted = False
-        for index, element in enumerate(list_result):
-            if i < element:
-                list_result.insert(index, i)
-                inserted = True
-                break
-
-        if not inserted:
-            list_result.append(i)
-
-    return list_result
+    return sorted(result)
