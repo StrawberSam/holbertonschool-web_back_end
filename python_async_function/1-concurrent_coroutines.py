@@ -43,21 +43,19 @@ async def wait_n(n: int, max_delay: int) -> typing.List[float]:
 
     list_result: list = []
 
-    for l in result:
-            if not list_result:
-                list_result.append(l)
-                continue
+    for i in result:
+        if not list_result:
+            list_result.append(i)
+            continue
 
-            inserted = False
-            for index, element in enumerate(list_result):
-                if l < element:
-                    list_result.insert(index, l)
-                    inserted = True
-                    break
+        inserted = False
+        for index, element in enumerate(list_result):
+            if i < element:
+                list_result.insert(index, i)
+                inserted = True
+                break
 
-            if not inserted:
-                list_result.append(l)
+        if not inserted:
+            list_result.append(i)
 
     return list_result
-
-
