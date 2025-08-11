@@ -34,14 +34,14 @@ class Server:
         """
         Retourne une page de données depuis le dataset.
 
-        Cette méthode utilise la fonction `index_range` pour calculer les indices
-        de début et de fin correspondant aux paramètres de pagination, puis
-        retourne la sous-liste appropriée du dataset.
+        Cette méthode utilise la fonction `index_range` pour calculer les
+        indices de début et de fin correspondant aux paramètres de pagination,
+        puis retourne la sous-liste appropriée du dataset.
 
         Args:
-            page (int, optionnel) : Numéro de la page à récupérer (défaut : 1).
+            page (int) : Numéro de la page à récupérer (défaut : 1).
                                     Doit être un entier strictement positif.
-           page_size (int, optionnel) : Nombre d'éléments par page (défaut : 10).
+           page_size (int) : Nombre d'éléments par page (défaut : 10).
                                      Doit être un entier strictement positif.
 
         Returns:
