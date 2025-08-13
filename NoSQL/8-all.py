@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
+"""
+Module list_all
+Ce module contient une fonction permettant de lister tous les documents d'une
+collection MongoDB en utilisant PyMongo.
+"""
+
 from pymongo import MongoClient
+
 def list_all(mongo_collection):
-    # Connexion à MongoDB (par défaut localhost:27017)
-    client = MongoClient()
+    """
+    Liste tous les documents d'une collection MongoDB.
 
-    # Sélection de la base de données
-    db = client.my_db
+    Args:
+        mongo_collection (pymongo.collection.Collection):
+            L'objet collection MongoDB sur lequel exécuter la requête.
 
-    # Sélection de la collection
-    collection = db.school
-
-    # Lister tous les documents
-    for document in collection.find():
-        print(document)
+    Returns:
+        list: Liste de tous les documents présents dans la collection.
+              Retourne une liste vide si aucun document n'est trouvé.
+    """
+    return list(mongo_collection.find())
