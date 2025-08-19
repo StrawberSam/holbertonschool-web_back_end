@@ -2630,3 +2630,5 @@ venv/lib/python3.12/site-packages/pymongo-4.14.0.dist-info/RECORD
 venv/lib/python3.12/site-packages/pymongo-4.14.0.dist-info/REQUESTED
 venv/lib/python3.12/site-packages/pymongo-4.14.0.dist-info/WHEEL
 venv/lib/python3.12/site-packages/pymongo-4.14.0.dist-info/licenses/LICENSE
+node_modules
+package-lock.json
