@@ -1,6 +1,6 @@
 export default function updateStudentGradeByCity(students, city, newGrades){
   const studentsFilter = students.filter(student => student.location === city);
-  studentsFilter.map(student => {
+  return studentsFilter.map(student => {
   // chercher une note dans newGrades
   const gradeObj = newGrades.find(g => g.studentId === student.id);
 
