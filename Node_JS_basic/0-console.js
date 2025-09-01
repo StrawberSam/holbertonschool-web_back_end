@@ -1,4 +1,4 @@
-export default function displayMessage(){
+function displayMessage(){
   process.stdout.write("Hello NodeJS!\n")
 }
 
