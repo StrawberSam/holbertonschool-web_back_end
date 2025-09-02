@@ -1,15 +1,15 @@
 // Afficher un message au début
-console.log("Welcome to Holberton School, what is your name?");
+console.log('Welcome to Holberton School, what is your name?');
 
 // Ecouter ce que tape l'utilisateur
-process.stdin.on("data", (data) => {
+process.stdin.on('data', (data) => {
   const name = data.toString().trim();
   console.log(`Your name is: ${name}`);
 });
 
 // Le message de fermeture
-process.stdin.on("end", () => {
-  console.log("This important software is now closing");
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
 });
 
 // data = ce que l’utilisateur a écrit (sous forme de Buffer).
