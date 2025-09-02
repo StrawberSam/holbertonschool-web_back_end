@@ -1,5 +1,5 @@
 // Afficher un message au début
-console.log('Welcome to Holberton School, what is your name?');
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
 // Ecouter ce que tape l'utilisateur
 process.stdin.on('data', (data) => {
