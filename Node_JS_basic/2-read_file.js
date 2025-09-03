@@ -22,7 +22,7 @@ function countStudents(path) {
 
   // Si le fichier est vide (aucune ligne), on affiche "0 étudiants"
   if (lines.length === 0) {
-    console.log(`Number of students: 0`);
+    console.log('Number of students: 0');
     return;
   }
 
@@ -41,16 +41,14 @@ function countStudents(path) {
     const cols = line.split(',').map((c) => c.trim());
 
     // On vérifie que la ligne contient bien assez de colonnes
-    if (cols.length <= Math.max(firstIdx, fieldIdx)) continue;
+    if (cols.length <= Math.max(firstIdx, fieldIdx)) {
+      const firstname = cols[firstIdx];
+      const field = cols[fieldIdx];
 
-    const firstname = cols[firstIdx];
-    const field = cols[fieldIdx];
-
-    // On ignore la ligne si l’une des deux valeurs est absente
-    if (!firstname || !field) continue;
-
-    // On ajoute un étudiant valide sous forme d’objet
-    students.push({ firstname, field });
+      if (firstname && field) {
+        students.push({ firstname, field });
+      }
+    }
   }
 
   // Nombre total d’étudiants valides
@@ -81,7 +79,7 @@ function countStudents(path) {
   for (const f of order) {
     const list = groups[f].join(', ');
     console.log(
-      `Number of students in ${f}: ${groups[f].length}. List: ${list}`
+      `Number of students in ${f}: ${groups[f].length}. List: ${list}`,
     );
   }
 }
