@@ -41,7 +41,7 @@ function countStudents(path) {
     const cols = line.split(',').map((c) => c.trim());
 
     // On vérifie que la ligne contient bien assez de colonnes
-    if (cols.length <= Math.max(firstIdx, fieldIdx)) {
+    if (cols.length > Math.max(firstIdx, fieldIdx)) {
       const firstname = cols[firstIdx];
       const field = cols[fieldIdx];
 
